@@ -2,9 +2,9 @@
 <head>
     <meta charset="utf-8">
 
-    <title>The HTML5 Herald</title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="SitePoint">
+    <title>Image Filter JS</title>
+    <meta name="description" content="Filter Image Through User Query">
+    <meta name="author" content="Gabriel Aquende">
 
     <link rel="stylesheet" href="css/style.css?v=1.0">
 
@@ -13,7 +13,102 @@
 <body>
 
 
-<h2>Hello World</h2>
+<h2>Image Filter</h2>
+
+<H3>Select Filter</H3>
+
+<form action="/action_page.php">
+    Chart Type
+    <select class = "chartType" name="chartType">
+        <option value="all">All</option>
+        <option value="alluvialDiagram">Alluvial Diagram</option>
+        <option value="areaChart">Area Chart</option>
+        <option value="barGraph">Bar Graph</option>
+        <option value="boxAndWhiskers">Box and Whiskers</option>
+        <option value="connectedScatterPlot">Connected Scatter Plot</option>
+        <option value="dotDistributionMap">Dot Distribution Map</option>
+        <option value="heatMap">Heat Map</option>
+        <option value="isarithmicMap">Isarithmic Map</option>
+        <option value="isopleth">Isopleth</option>
+        <option value="lineChart">Line Chart</option>
+        <option value="model">Model</option>
+        <option value="pieChart">Pie Chart</option>
+        <option value="polarAre">Polar Are</option>
+        <option value="scatterPlot">Scatter Plot</option>
+        <option value="stackBarChart">Stack Bar Chart</option>
+        <option value="stepChart">Step Chart</option>
+        <option value="timeSeries">Time Series</option>
+        <option value="unknown">Unknown</option>
+        <option value="waterfallChart">Waterfall Chart</option>
+        <option value="wedgeStackGraph">Wedge Stack Graph</option>
+
+
+    </select>
+
+    Secondary Chart Types:
+    <select class = "secondaryChartType" name="secondaryChartType">
+        <option value="all">All</option>
+        <option value="alluvialDiagram">Alluvial Diagram</option>
+        <option value="areaChart">Area Chart</option>
+        <option value="barGraph">Bar Graph</option>
+        <option value="boxAndWhiskers">Box and Whiskers</option>
+        <option value="connectedScatterPlot">Connected Scatter Plot</option>
+        <option value="dotDistributionMap">Dot Distribution Map</option>
+        <option value="heatMap">Heat Map</option>
+        <option value="isarithmicMap">Isarithmic Map</option>
+        <option value="isopleth">Isopleth</option>
+        <option value="lineChart">Line Chart</option>
+        <option value="model">Model</option>
+        <option value="pieChart">Pie Chart</option>
+        <option value="polarAre">Polar Are</option>
+        <option value="scatterPlot">Scatter Plot</option>
+        <option value="stackBarChart">Stack Bar Chart</option>
+        <option value="stepChart">Step Chart</option>
+        <option value="timeSeries">Time Series</option>
+        <option value="unknown">Unknown</option>
+        <option value="waterfallChart">Waterfall Chart</option>
+        <option value="wedgeStackGraph">Wedge Stack Graph</option>
+
+
+    </select>
+
+    PDF Source:
+    <select  class = "PDFSource" name="PDFSource">
+        <option value="all">All</option>
+        <option value="PDF1">1.Climate Science Special Report Volume 1</option>
+        <option value="PDF2">2.Special Report: Global Warming of 1.5c Chapter 1</option>
+        <option value="PDF3">3.Special Report: Global Warming of 1.5c Chapter 2</option>
+        <option value="PDF4">4.Special Report: Global Warming of 1.5c Chapter 3</option>
+        <option value="PDF5">5.Special Report: Global Warming of 1.5c Chapter 4</option>
+        <option value="PDF6">6.Special Report: Global Warming of 1.5c Chapter 5</option>
+        <option value="PDF7">7.Climate Change 2014 Synthesis Report</option>
+        <option value="PDF8">8.Climate Change 2014 Part A</option>
+        <option value="PDF9">9.Managing the Risks of Extreme Events</option>
+        <option value="PDF10">10.Renewable Energy Sources and Climate Change Mitigation</option>
+        <option value="PDF11">11.Climate Change 2007 Synthesis Report</option>
+        <option value="PDF12">12.Climate Change 2007: Impacts, Adaptation and Vulnerability </option>
+        <option value="PDF13">13.Climate Change 2007 Mitigation</option>
+        <option value="PDF14">14.2007 The Physical Science Basis</option></select>
+
+    Year:
+    <select  class = "year" name="year">
+        <option value="all">All</option>
+        <option value="2007">2007</option>
+        <option value="2012">2012</option>
+        <option value="2014">2014</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+
+    </select>
+
+    <br><br>
+    <input type="submit">
+</form>
+
+
+
+
+
 <script src="js/scripts.js"></script>
 </body>
 </html>
