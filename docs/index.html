@@ -17,9 +17,10 @@
 
 <H3>Select Filter</H3>
 
-<form action="/action_page.php">
-    Chart Type
-    <select class = "chartType" name="chartType">
+<div id = "Form">
+<form>
+    Chart Type:
+    <select id = "chartType">
         <option value="all">All</option>
         <option value="alluvialDiagram">Alluvial Diagram</option>
         <option value="areaChart">Area Chart</option>
@@ -45,8 +46,9 @@
 
     </select>
 
+
     Secondary Chart Types:
-    <select class = "secondaryChartType" name="secondaryChartType">
+    <select id = "secondChartType">
         <option value="all">All</option>
         <option value="alluvialDiagram">Alluvial Diagram</option>
         <option value="areaChart">Area Chart</option>
@@ -73,7 +75,7 @@
     </select>
 
     PDF Source:
-    <select  class = "PDFSource" name="PDFSource">
+    <select id = "PDF">
         <option value="all">All</option>
         <option value="PDF1">1.Climate Science Special Report Volume 1</option>
         <option value="PDF2">2.Special Report: Global Warming of 1.5c Chapter 1</option>
@@ -91,7 +93,7 @@
         <option value="PDF14">14.2007 The Physical Science Basis</option></select>
 
     Year:
-    <select  class = "year" name="year">
+    <select  id = "year">
         <option value="all">All</option>
         <option value="2007">2007</option>
         <option value="2012">2012</option>
@@ -102,9 +104,13 @@
     </select>
 
     <br><br>
-    <input type="submit">
+    <button type="button" onclick=testAlert()>Display</button>
 </form>
+</div>
 
+<div>
+    <!-- This is Where the Images willbe Shown -->
+</div>
 
 
 
