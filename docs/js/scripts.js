@@ -1,5 +1,3 @@
-
-
 function getChartType(){
     let chartType;
 
@@ -48,23 +46,19 @@ function getYear(){
 
 }
 
-function testAlert() {
-    alert("First Chart Type is:  " + getChartType() + " " + "The Second Chart Type is "+ getSecondaryChartType()+ " "  + "The PDF is "+ getPDF()
-        + " " + "The Year is "+ getYear());
-}
 
 
 var file = document.getElementById('csv').files[0];
 
 
-function testParse(file){
+function fileContentIntoVar(file){
 
     return new Promise(function(resolve,reject) {
         var reader = new FileReader();
         reader.onload = function (){
 
-            let data = reader.result;
-            resolve(data);
+            let results = reader.result;
+            resolve(results);
 
 
         };
@@ -73,16 +67,28 @@ function testParse(file){
 
     });
 
-};
-
-
-
-function afterChosen() {
-    testParse(file).then(function (data) {
-        console.log(data);
-    });
-
-    console.log("after Choser Working")
 }
 
+
+
+
+
+function filterImage() {
+    fileContentIntoVar(file).then(function (results) {
+        let parsedData = Papa.parse(results,{header:true});
+
+        let chartType = getChartType();
+        let secondaryChartType = getSecondaryChartType();
+        let pdf = getPDF();
+        let year = getYear();
+        let imgNum;
+
+
+
+        let testObj = parsedData.data[0]
+
+    });
+
+
+}
 
