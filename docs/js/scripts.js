@@ -1,3 +1,5 @@
+var file = document.getElementById('csv').files[0];
+
 function getChartType(){
     let chartType;
 
@@ -46,11 +48,6 @@ function getYear(){
 
 }
 
-
-
-var file = document.getElementById('csv').files[0];
-
-
 function fileContentIntoVar(file){
 
     return new Promise(function(resolve,reject) {
@@ -69,11 +66,55 @@ function fileContentIntoVar(file){
 
 }
 
+function countArrays(sampleObj){
+    var results = 0
+
+    for(var prop in sampleObj)
+    {
+        if(sampleObj.hasOwnProperty(prop))
+        {
+            results++;
+        }
+    }
+
+    return results;
+
+}
 
 
+function filterArray(chart,secondChart,pdfSrc,yr, sampleObj){
+    let userChart = chart;
+    let userSecondChart = secondChart;
+    let userPdf = pdfSrc;
+    let userYear = yr;
+
+    let arrayCount = countArrays(sampleObj);
 
 
-function filterImage() {
+    for (i = 0; i < arrayCount; i++)
+    {
+
+        let testObj = sampleObj[i];
+        let chartBool = userChart == testObj["Type of Chart"] || userChart == "All";
+        let secondChartBool = userSecondChart == testObj["Secondary Type Of Chart"] || userSecondChart == "All";
+        let yearBool = userYear == testObj["Year"] || userYear == "All";
+
+
+        if(chartBool && secondChartBool && yearBool)
+        {
+            console.log(sampleObj[i]);
+        }
+
+        else{
+            console.log("Not Allowed")
+        }
+    }
+
+
+}
+
+
+function application() {
     fileContentIntoVar(file).then(function (results) {
         let parsedData = Papa.parse(results,{header:true});
 
@@ -83,12 +124,17 @@ function filterImage() {
         let year = getYear();
         let imgNum;
 
+        let sampleObj = parsedData.data;
+
+        let arrCount = countArrays(sampleObj);
 
 
-        let testObj = parsedData.data[0]
+        filterArray(chartType,secondaryChartType,pdf,year,sampleObj);
 
     });
 
 
 }
+
+
 
