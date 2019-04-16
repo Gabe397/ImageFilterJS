@@ -88,7 +88,9 @@ function filterArray(chart,secondChart,pdfSrc,yr, sampleObj){
     let userPdf = pdfSrc;
     let userYear = yr;
 
+    let filteredArray = [];
     let arrayCount = countArrays(sampleObj);
+
 
 
     for (i = 0; i < arrayCount; i++)
@@ -102,13 +104,16 @@ function filterArray(chart,secondChart,pdfSrc,yr, sampleObj){
 
         if(chartBool && secondChartBool && yearBool)
         {
-            console.log(sampleObj[i]);
+            filteredArray.push(sampleObj[i]["Image#"]);
         }
 
         else{
-            console.log("Not Allowed")
+            console.log();
         }
     }
+
+
+    return filteredArray;
 
 
 }
@@ -126,10 +131,9 @@ function application() {
 
         let sampleObj = parsedData.data;
 
-        let arrCount = countArrays(sampleObj);
+        let filteredResult = filterArray(chartType,secondaryChartType,pdf,year,sampleObj);
 
-
-        filterArray(chartType,secondaryChartType,pdf,year,sampleObj);
+        console.log(filteredResult);
 
     });
 
