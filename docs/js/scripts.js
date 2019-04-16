@@ -1,3 +1,5 @@
+
+
 function getChartType(){
     let chartType;
 
@@ -46,9 +48,41 @@ function getYear(){
 
 }
 
-
-function testAlert()
-{
-    alert("First Chart Type is:  " + getChartType() + " " + "The Second Chart Type is "+ getSecondaryChartType() + "The PDF is "+ getPDF()
-    + "The Year is "+ getYear());
+function testAlert() {
+    alert("First Chart Type is:  " + getChartType() + " " + "The Second Chart Type is "+ getSecondaryChartType()+ " "  + "The PDF is "+ getPDF()
+        + " " + "The Year is "+ getYear());
 }
+
+
+var file = document.getElementById('csv').files[0];
+
+
+function testParse(file){
+
+    return new Promise(function(resolve,reject) {
+        var reader = new FileReader();
+        reader.onload = function (){
+
+            let data = reader.result;
+            resolve(data);
+
+
+        };
+
+        reader.readAsText(document.getElementById('csv').files[0]);
+
+    });
+
+};
+
+
+
+function afterChosen() {
+    testParse(file).then(function (data) {
+        console.log(data);
+    });
+
+    console.log("after Choser Working")
+}
+
+
