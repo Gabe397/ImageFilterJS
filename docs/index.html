@@ -18,9 +18,6 @@
 <h2>Image Filter</h2>
 
 <h2> Import Image Index</h2>
-<div>
-    <input id="csv" type="file" onchange="afterChosen()">
-</div>
 
 <H3>Select Filter</H3>
 
@@ -111,12 +108,13 @@
     </select>
 
     <br><br>
-    <button type="button" onclick=testAlert()>Display</button>
+    <input id="csv" type="file" onchange="filterImage()">
 </form>
 </div>
 
 <div>
-    <!-- This is Where the Images willbe Shown -->
+    <img src="data/ImageList/2.png" alt="Example" width = "250" height="150" >
+
 </div>
 
 
