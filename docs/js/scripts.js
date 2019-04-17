@@ -81,7 +81,6 @@ function countArrays(sampleObj){
 
 }
 
-
 function filterArray(chart,secondChart,pdfSrc,yr, sampleObj){
     let userChart = chart;
     let userSecondChart = secondChart;
@@ -133,12 +132,22 @@ function application() {
 
         let filteredResult = filterArray(chartType,secondaryChartType,pdf,year,sampleObj);
 
-        console.log(filteredResult);
+
+        for(i=0; i<filteredResult.length;i++)
+        {
+            img_create("data/ImageList/" + filteredResult[i] + ".png");
+        }
+
 
     });
 
 
 }
 
-
+function img_create(src) {
+    var img = document.createElement('img');
+    img.src = src;
+    img.setAttribute("class","img");
+    document.getElementById('imgDiv').appendChild(img);
+}
 
