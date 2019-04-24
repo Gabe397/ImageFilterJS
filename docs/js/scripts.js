@@ -99,9 +99,10 @@ function filterArray(chart,secondChart,pdfSrc,yr, sampleObj){
         let chartBool = userChart == testObj["Type of Chart"] || userChart == "All";
         let secondChartBool = userSecondChart == testObj["Secondary Type Of Chart"] || userSecondChart == "All";
         let yearBool = userYear == testObj["Year"] || userYear == "All";
+        let pdfBool = userPdf == testObj['Source PDF']||userPdf == 'All'
 
 
-        if(chartBool && secondChartBool && yearBool)
+        if(chartBool && secondChartBool && yearBool && pdfBool)
         {
             filteredArray.push(sampleObj[i]["Image#"]);
         }
@@ -137,6 +138,7 @@ function application() {
         {
             img_create("data/ImageList/" + filteredResult[i] + ".png");
         }
+
 
 
     });
