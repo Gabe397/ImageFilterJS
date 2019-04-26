@@ -102,7 +102,7 @@ function filterArray(chart,secondChart,pdfSrc,yr, sampleObj){
         let pdfBool = userPdf == testObj['Source PDF']||userPdf == 'All'
 
 
-        if(chartBool && secondChartBool && yearBool && pdfBool)
+        if(chartBool && secondChartBool && yearBool & pdfBool)
         {
             filteredArray.push(sampleObj[i]["Image#"]);
         }
@@ -136,7 +136,7 @@ function application() {
 
         for(i=0; i<filteredResult.length;i++)
         {
-            img_create("data/ImageList/" + filteredResult[i] + ".png");
+            img_create("docs/data/ImageList/" + filteredResult[i] + ".png");
         }
 
 
