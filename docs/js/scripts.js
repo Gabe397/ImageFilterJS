@@ -67,7 +67,7 @@ function fileContentIntoVar(file){
 }
 
 function countArrays(sampleObj){
-    var results = 0
+    var results = 0;
 
     for(var prop in sampleObj)
     {
@@ -118,7 +118,6 @@ function filterArray(chart,secondChart,pdfSrc,yr, sampleObj){
 
 }
 
-
 function application() {
     fileContentIntoVar(file).then(function (results) {
         let parsedData = Papa.parse(results,{header:true});
@@ -151,5 +150,30 @@ function img_create(src) {
     img.src = src;
     img.setAttribute("class","img");
     document.getElementById('imgDiv').appendChild(img);
+}
+
+function update()
+{
+    d3.csv("docs/data/imageIndex.csv", function test(data){
+
+
+        let sampleObj = Array.from(data);
+
+        let chartType = getChartType();
+        let secondaryChartType = getSecondaryChartType();
+        let pdf = getPDF();
+        let year = getYear();
+
+
+        let filteredResult = filterArray(chartType,secondaryChartType,pdf,year,sampleObj);
+
+        for(i=0; i<filteredResult.length;i++)
+        {
+            img_create("docs/data/ImageList/" + filteredResult[i] + ".png");
+        }
+
+
+    });
+
 }
 
