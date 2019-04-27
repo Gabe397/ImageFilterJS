@@ -155,7 +155,7 @@ function img_create(src) {
 function update()
 {
     d3.csv("docs/data/imageIndex.csv", function test(data){
-
+        document.getElementById("imgDiv").innerHTML = "";
 
         let sampleObj = Array.from(data);
 
